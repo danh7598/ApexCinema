@@ -1,11 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { sizeWidth } from '../utils/Size';
-
+import { Image, StyleSheet, Text, View } from 'react-native';
+import { sizeHeight, sizeWidth } from '../utils/Size';
+import back from '../../assets/Back.png';
 const HeaderBar = () => {
     return (
         <View style={styles.container}>
-            <Text></Text>
+            <Image
+                style={styles.imgLeft}
+                source={back} />
         </View>
     );
 };
@@ -17,5 +19,9 @@ const styles = StyleSheet.create({
         width: sizeWidth(100),
         height: sizeHeight(8),
         backgroundColor: 'skyblue',
+    },
+    imgLeft: {
+        width: sizeWidth(4),
+        height: sizeWidth(4)
     }
 });
