@@ -16,6 +16,6 @@ const styles = StyleSheet.create({
     container: {
         width: sizeWidth(100),
         height: sizeHeight(8),
-        backgroundColor: 'skyblue'
+        backgroundColor: 'skyblue',
     }
 });
