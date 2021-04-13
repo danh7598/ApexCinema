@@ -15,6 +15,7 @@ export default HeaderBar;
 const styles = StyleSheet.create({
     container: {
         width: sizeWidth(100),
-        height: sizeHeight(8)
+        height: sizeHeight(8),
+        backgroundColor: 'skyblue'
     }
 });
