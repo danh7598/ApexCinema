@@ -19,6 +19,8 @@ const styles = StyleSheet.create({
         width: sizeWidth(100),
         height: sizeHeight(8),
         backgroundColor: 'skyblue',
+        flexDirection: 'row',
+        alignItems: 'center'
     },
     imgLeft: {
         width: sizeWidth(4),
