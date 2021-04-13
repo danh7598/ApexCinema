@@ -1,13 +1,32 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import { sizeHeight, sizeWidth } from '../utils/Size';
-import back from '../../assets/Back.png';
-const HeaderBar = () => {
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { sizeFont, sizeHeight, sizeWidth } from '../utils/Size';
+
+const HeaderBar = ({ leftButton, right1Button, right2Button, title }) => {
+    //console.log(sizeWidth(6.4))
     return (
         <View style={styles.container}>
-            <Image
-                style={styles.imgLeft}
-                source={back} />
+            <TouchableOpacity style={styles.viewButton}>
+                <Image
+                    style={styles.imgButton}
+                    source={leftButton} />
+            </TouchableOpacity>
+            <Text style={styles.textTitle}>{title}</Text>
+            <View style={styles.viewGroupRightButton}>
+                {right1Button &&
+                    <TouchableOpacity
+                        style={styles.viewButton}>
+                        <Image style={styles.imgButton}
+                            source={right1Button} />
+                    </TouchableOpacity>}
+                {right2Button &&
+                    <TouchableOpacity
+                        style={[styles.viewButton,
+                        { marginLeft: sizeWidth(3.2) }]}>
+                        <Image style={styles.imgButton}
+                            source={right2Button} />
+                    </TouchableOpacity>}
+            </View>
         </View>
     );
 };
@@ -17,13 +36,36 @@ export default HeaderBar;
 const styles = StyleSheet.create({
     container: {
         width: sizeWidth(100),
-        height: sizeHeight(8),
-        backgroundColor: 'skyblue',
+        height: sizeHeight(10),
+        //backgroundColor: 'skyblue',
         flexDirection: 'row',
-        alignItems: 'center'
+        paddingLeft: sizeWidth(6.4),
+        alignItems: 'center',
+        //justifyContent: 'space-between'
     },
-    imgLeft: {
-        width: sizeWidth(4),
-        height: sizeWidth(4)
+    viewButton: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#2A2937',
+        borderRadius: sizeWidth(3.2),
+        width: sizeWidth(12.8),
+        height: sizeWidth(12.8)
+    },
+    imgButton: {
+        width: sizeWidth(6.4),
+        height: sizeWidth(6.4),
+        tintColor: 'white'
+    },
+    textTitle: {
+        marginLeft: sizeWidth(4.2),
+        fontSize: sizeFont(4.8),
+        color: 'white',
+        fontWeight: '600'
+    },
+    viewGroupRightButton: {
+        flexDirection: 'row',
+        position: 'absolute',
+        right: sizeWidth(6.4)
+
     }
 });
