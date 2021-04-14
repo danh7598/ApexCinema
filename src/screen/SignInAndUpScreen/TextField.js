@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { backgroundColor } from '../../strings/colors';
+import { backgroundColor, neutral2Color, neutral3Color } from '../../strings/colors';
 import { sizeFont, sizeHeight, sizeWidth } from '../../utils/Size';
 
 class TextField extends Component {
@@ -9,15 +9,18 @@ class TextField extends Component {
             <View style={[styles.viewTextInput, this.props.styleView]}>
                 <TextInput
                     {...this.props}
+                    placeholderTextColor={neutral2Color}
                     style={styles.textInput}>
                 </TextInput>
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={this.props.onPressIcon}
+                >
                     <Image
                         style={styles.imgButton}
                         source={this.props.icon} />
                 </TouchableOpacity>
             </View>
-        )
+        );
     }
 }
 
@@ -44,6 +47,6 @@ const styles = StyleSheet.create({
         height: sizeHeight(5.3),
         width: sizeWidth(5.3),
         resizeMode: 'contain',
-        tintColor: '#444444'
+        tintColor: neutral3Color
     }
 });
