@@ -5,6 +5,10 @@ import HeaderBar from "./src/common/HeaderBar";
 import { sizeWidth } from "./src/utils/Size";
 import Constants from "expo-constants";
 import SettingScreen from "./src/screen/SettingScreen";
+import SignInAndUpScreen from './src/screen/SignInAndUpScreen';
+import Verification1 from './src/screen/VerificationScreen/Verification1';
+import Verification2 from './src/screen/VerificationScreen/Verification2';
+import Verification3 from './src/screen/VerificationScreen/Verification3';
 import HistoryScreen from "./src/screen/HistoryScreen";
 import ProfileScreen from "./src/screen/ProfileScreen";
 import PointNudoozScreen from "./src/screen/PointNudoozScreen";
@@ -13,6 +17,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
+      {/* <SignInAndUpScreen /> */}
+      <Verification3 />
       {/* <HeaderBar
         leftButton={back}
         right1Button={zoom}
@@ -23,6 +29,7 @@ export default function App() {
       {/* <SettingScreen /> */}
       {/* <ProfileScreen /> */}
       <PointNudoozScreen />
+     {/* <HistoryScreen /> */}
     </View>
   );
 }
