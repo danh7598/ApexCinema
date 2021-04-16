@@ -11,6 +11,9 @@ import Verification1 from './src/screen/VerificationScreen/Verification1';
 import Verification2 from './src/screen/VerificationScreen/Verification2';
 import Verification3 from './src/screen/VerificationScreen/Verification3';
 import HistoryScreen from "./src/screen/HistoryScreen";
+import Onboarding1 from './src/screen/OnboardingScreen/Onboarding1';
+import Onboarding2 from './src/screen/OnboardingScreen/Onboarding2';
+import Onboarding3 from './src/screen/OnboardingScreen/Onboarding3';
 
 
 export default function App() {
@@ -18,14 +21,15 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="light" />
       {/* <SignInAndUpScreen /> */}
-      <Verification3 />
+      {/* <Verification3 /> */}
+      <Onboarding3 />
       {/* <HeaderBar
         leftButton={back}
         right1Button={zoom}
         right2Button={bell}
         title={"Verification"}
       /> */}
-     {/* <HistoryScreen /> */}
+      {/* <HistoryScreen /> */}
     </View>
   );
 }
@@ -34,6 +38,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: Constants.statusBarHeight,
-   backgroundColor: '#201F28'
+    backgroundColor: '#201F28'
   },
 });
