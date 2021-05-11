@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Text, StyleSheet, View, Image, TouchableOpacity } from "react-native";
-import { sizeFont, sizeHeight, sizeWidth } from "../utils/Size";
+import { sizeFont, sizeHeight, sizeWidth } from "../../utils/Size";
 import PropTypes from "prop-types";
 class SettingBar extends Component {
   render() {
@@ -12,7 +12,7 @@ class SettingBar extends Component {
         </View>
         <Image
           style={styles.rightIcon}
-          source={require("../../assets/Next.png")}
+          source={require("../../../assets/Next.png")}
         />
       </TouchableOpacity>
     );

@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   textTitle: {
     marginLeft: sizeWidth(4.2),
-    fontSize: sizeFont(4.8),
+    fontSize: sizeFont(2.34375),
     color: "white",
     fontWeight: "600",
   },

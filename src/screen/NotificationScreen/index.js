@@ -1,7 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import HeaderBar from "../../common/HeaderBar";
-
+import Notification from "./Notification";
+import Data from "./Data";
 const NotificationScreen = () => {
   return (
     <View style={styles.container}>
@@ -12,6 +13,17 @@ const NotificationScreen = () => {
           this.props.navigation.goBack();
         }}
       />
+      {Data.map((item, index) => {
+        return (
+          <Notification
+            title={item.title}
+            time={item.time}
+            image={item.image}
+            key={item.id}
+            seen={item.seen}
+          />
+        );
+      })}
     </View>
   );
 };

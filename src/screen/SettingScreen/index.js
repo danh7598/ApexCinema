@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Text, StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import HeaderBar from "../../common/HeaderBar";
-import SettingBar from "../../common/SettingBar";
+import SettingBar from "./SettingBar";
 import { primaryColor } from "../../strings/colors";
 import { sizeFont, sizeHeight, sizeWidth } from "../../utils/Size";
 import ProfileData from "./ProfileData";
 import Data from "./Data";
-import Profile from "../../common/Profile";
+import Profile from "../ProfileScreen/Profile";
 export default class SettingScreen extends Component {
   render() {
     return (

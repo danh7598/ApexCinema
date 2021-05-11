@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Text, StyleSheet, View, Image } from "react-native";
 import HeaderBar from "../../common/HeaderBar";
-import Profile from "../../common/Profile";
+import Profile from "../ProfileScreen/Profile";
 import { neutral3Color, primaryColor } from "../../strings/colors";
 import { sizeFont, sizeHeight, sizeWidth } from "../../utils/Size";
 

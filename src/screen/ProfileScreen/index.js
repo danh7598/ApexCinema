@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Text, StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import HeaderBar from "../../common/HeaderBar";
-import SettingBar from "../../common/SettingBar";
+import SettingBar from "../SettingScreen/SettingBar";
 import { neutral3Color, primaryColor } from "../../strings/colors";
 import { sizeFont, sizeHeight, sizeWidth } from "../../utils/Size";
 import Data from "./Data";

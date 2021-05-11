@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { Text, StyleSheet, View, Image, FlatList } from "react-native";
 import Button from "../../common/Button";
 import HeaderBar from "../../common/HeaderBar";
-import Ticket from "../../common/Ticket";
 import { sizeFont, sizeHeight, sizeWidth } from "../../utils/Size";
+import Ticket from "../HistoryScreen/Ticket";
+
 import Data from "./Data";
 
 export default class HistoryScreen extends Component {
