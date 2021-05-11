@@ -23,7 +23,7 @@ const myTheme = {
 const AppNavigator = () => {
   return (
     <NavigationContainer theme={myTheme}>
-      <Stack.Navigator headerMode={"none"} initialRouteName={"SettingScreen"}>
+      <Stack.Navigator headerMode={"none"} initialRouteName={"NotificationScreen"}>
         <Stack.Screen name="SettingScreen" component={SettingScreen} />
         <Stack.Screen name="SignInAndUpScreen" component={SignInAndUpScreen} />
         <Stack.Screen name="HistoryScreen" component={HistoryScreen} />

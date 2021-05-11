@@ -7,7 +7,7 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from "react-native";
-import { sizeFont, sizeHeight, sizeWidth } from "../utils/Size";
+import { sizeFont, sizeHeight, sizeWidth } from "../../utils/Size";
 import Rating from "./Rating";
 import PropTypes from "prop-types";
 class Ticket extends Component {
@@ -16,7 +16,7 @@ class Ticket extends Component {
       <TouchableOpacity style={styles.container}>
         <Image
           style={styles.baseBackground}
-          source={require("../../assets/Base.png")}
+          source={require("../../../assets/Base.png")}
         />
         <View style={styles.pictureView}>
           <Image style={styles.picture} source={this.props.source} />

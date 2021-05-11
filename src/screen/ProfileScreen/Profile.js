@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Text, StyleSheet, View, TouchableOpacity, Image } from "react-native";
-import { primaryColor } from "../strings/colors";
-import { sizeFont, sizeHeight, sizeWidth } from "../utils/Size";
+import { primaryColor } from "../../strings/colors";
+import { sizeFont, sizeHeight, sizeWidth } from "../../utils/Size";
 
 export default class Profile extends Component {
   render() {
@@ -15,12 +15,12 @@ export default class Profile extends Component {
         <View style={styles.profileContainer}>
           <Image
             style={styles.icon}
-            source={require("../../assets/Next.png")}
+            source={require("../../../assets/Next.png")}
           />
         </View>
         <Image
           style={styles.image}
-          source={require("../../assets/Avatar.png")}
+          source={require("../../../assets/Avatar.png")}
         />
         <View style={styles.textView}>
           <Text style={styles.title}>Anita Rose</Text>

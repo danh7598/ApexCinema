@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Text, StyleSheet, View, Image } from "react-native";
-import { primaryColor } from "../strings/colors";
-import { sizeFont, sizeHeight, sizeWidth } from "../utils/Size";
+import { primaryColor } from "../../strings/colors";
+import { sizeFont, sizeHeight, sizeWidth } from "../../utils/Size";
 import PropTypes from "prop-types";
 const array = [1, 2, 3, 4, 5];
 class Rating extends Component {
@@ -14,7 +14,7 @@ class Rating extends Component {
             return (
               <Image
                 style={styles.image}
-                source={require("../../assets/Star1.png")}
+                source={require("../../../assets/Star1.png")}
                 key={item}
               />
             );
@@ -22,7 +22,7 @@ class Rating extends Component {
             return (
               <Image
                 style={styles.image}
-                source={require("../../assets/Star2.png")}
+                source={require("../../../assets/Star2.png")}
                 key={item}
               />
             );
