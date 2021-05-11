@@ -13,11 +13,14 @@ export default class PointNudoozScreen extends Component {
           <HeaderBar
             leftButton={require("../../../assets/Back.png")}
             title="Point Nudooz"
+            onPressLeft={() => {
+              this.props.navigation.goBack();
+            }}
           />
         </View>
         <View style={styles.midContainer}>
           <View style={styles.profileContainer}>
-            <Profile />
+            <Profile navigation={this.props.navigation} />
           </View>
           <View style={styles.rewardContainer}>
             <Image

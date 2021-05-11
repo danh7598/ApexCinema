@@ -13,6 +13,9 @@ export default class ProfileScreen extends Component {
           <HeaderBar
             leftButton={require("../../../assets/Back.png")}
             title={"Profile"}
+            onPressLeft={() => {
+              this.props.navigation.goBack();
+            }}
           />
         </View>
         <View style={styles.midContainer}>
@@ -34,6 +37,9 @@ export default class ProfileScreen extends Component {
                   key={item.id}
                   text={item.text}
                   source={item.source}
+                  onPress={() => {
+                    this.props.navigation.navigate(item.navigate);
+                  }}
                 />
               );
             })}
