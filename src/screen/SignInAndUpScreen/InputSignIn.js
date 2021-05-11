@@ -17,12 +17,12 @@ class InputSignIn extends Component {
     }
 
     onChangeEmail = (text) => {
-        this.setState({ emailValue: text})
-    }
-    
+        this.setState({ emailValue: text });
+    };
+
     onChangePassword = (text) => {
-        this.setState({ passwordValue: text})
-    }
+        this.setState({ passwordValue: text });
+    };
 
     render() {
         return (
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         marginTop: sizeHeight(2.6)
     },
     textForgotPassword: {
-        fontSize: sizeFont(3.7),
+        fontSize: sizeFont(1.83),
         fontWeight: '400',
         color: neutral3Color,
         alignSelf: 'flex-end',

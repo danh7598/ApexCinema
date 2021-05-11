@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     textInput: {
-        fontSize: sizeFont(4.2),
+        fontSize: sizeFont(2.09),
         color: 'white',
         fontWeight: '500'
     },
