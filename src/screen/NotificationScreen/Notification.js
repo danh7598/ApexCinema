@@ -6,26 +6,29 @@ import { sizeFont, sizeHeight, sizeWidth } from "../../utils/Size";
 
 const Notification = ({ title, time, seen, image }) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <View style={styles.container}>
       {seen === false && (
         <Image
           style={styles.oval}
           source={require("../../../assets/Oval.png")}
         />
       )}
-      <Image style={styles.icon} source={image} />
-      <View style={styles.textView}>
-        <Text
-          style={[
-            styles.title,
-            { color: seen === true ? neutral3Color : neutral4Color },
-          ]}
-        >
-          {title}
-        </Text>
-        <Text style={styles.time}>{time}</Text>
-      </View>
-    </TouchableOpacity>
+      <TouchableOpacity style={styles.touchableContainer}>
+        <Image style={styles.icon} source={image} />
+        <View style={styles.textView}>
+          <Text
+            style={[
+              styles.title,
+              { color: seen === true ? neutral3Color : neutral4Color },
+            ]}
+          >
+            {title}
+          </Text>
+          <Text style={styles.time}>{time}</Text>
+        </View>
+      </TouchableOpacity>
+    </View>
+
   );
 };
 
@@ -37,10 +40,15 @@ const styles = StyleSheet.create({
     height: sizeHeight(15.1),
     backgroundColor: "#2A2937",
     marginHorizontal: sizeWidth(6.4),
-    marginTop: sizeHeight(2.08),
+    // marginTop: sizeHeight(2.08),
     borderRadius: sizeWidth(3.2),
     flexDirection: "row",
+    alignItems: "center",
+  },
+  touchableContainer: {
+    // backgroundColor: 'skyblue',
     paddingHorizontal: sizeWidth(4.26),
+    flexDirection: "row",
     alignItems: "center",
   },
   icon: {

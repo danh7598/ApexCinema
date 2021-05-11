@@ -1,8 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import HeaderBar from "../../common/HeaderBar";
 import Notification from "./Notification";
 import Data from "./Data";
+import { sizeHeight } from "../../utils/Size";
 const NotificationScreen = () => {
   return (
     <View style={styles.container}>
@@ -13,17 +14,17 @@ const NotificationScreen = () => {
           this.props.navigation.goBack();
         }}
       />
-      {Data.map((item, index) => {
-        return (
-          <Notification
-            title={item.title}
-            time={item.time}
-            image={item.image}
-            key={item.id}
-            seen={item.seen}
-          />
-        );
-      })}
+      <FlatList
+        data={Data}
+        style={styles.listItem}
+        ItemSeparatorComponent={() => <View style={styles.separator} />}
+        keyExtractor={(item, index) => item.id}
+        renderItem={({ item, index }) => {
+          return (
+            <Notification {...item} />
+          );
+        }}
+      />
     </View>
   );
 };
@@ -34,4 +35,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  listItem: {
+    marginTop: sizeHeight(1.04)
+  },
+  separator: {
+    height: sizeHeight(1.97)
+  }
 });
