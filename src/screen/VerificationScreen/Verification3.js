@@ -17,10 +17,55 @@ export default class Verification3 extends Component {
             pin3: '',
             pin4: ''
         };
+        this.pin1Ref = React.createRef();
+        this.pin2Ref = React.createRef();
+        this.pin3Ref = React.createRef();
+        this.pin4Ref = React.createRef();
     }
 
-    onChangePhone = (text) => {
-        this.setState({ phoneValue: text });
+    onChangePin1 = (text) => {
+        console.log(text)
+        if (text == '') {
+            this.setState({ pin1: text });
+        } else {
+            this.setState({ pin1: text }, () => {
+                this.pin2Ref.current.focus();
+            });
+        }
+    };
+
+    onChangePin2 = (text) => {
+        if (text == '') {
+            this.setState({ pin2: text }, () => {
+                this.pin1Ref.current.focus();
+            });
+        } else {
+            this.setState({ pin2: text }, () => {
+                this.pin3Ref.current.focus();
+            });
+        }
+    };
+
+    onChangePin3 = (text) => {
+        if (text == '') {
+            this.setState({ pin3: text }, () => {
+                this.pin2Ref.current.focus();
+            });
+        } else {
+            this.setState({ pin3: text }, () => {
+                this.pin4Ref.current.focus();
+            });
+        }
+    };
+
+    onChangePin4 = (text) => {
+        if (text == '') {
+            this.setState({ pin4: text }, () => {
+                this.pin3Ref.current.focus();
+            });
+        } else {
+            this.setState({ pin4: text });
+        }
     };
 
     render() {
@@ -34,17 +79,29 @@ export default class Verification3 extends Component {
                     {<Text style={styles.textPhone}> (+1) 280 437 4729</Text>}
                 </Text>
                 <View style={styles.viewPinCode}>
-                    <PinCodeInput />
-                    <PinCodeInput />
-                    <PinCodeInput />
-                    <PinCodeInput />
+                    <PinCodeInput
+                        value={this.state.pin1}
+                        onChangeText={(text) => this.onChangePin1(text)}
+                        ref={this.pin1Ref} />
+                    <PinCodeInput
+                        value={this.state.pin2}
+                        onChangeText={(text) => this.onChangePin2(text)}
+                        ref={this.pin2Ref} />
+                    <PinCodeInput
+                        value={this.state.pin3}
+                        onChangeText={(text) => this.onChangePin3(text)}
+                        ref={this.pin3Ref} />
+                    <PinCodeInput
+                        value={this.state.pin4}
+                        onChangeText={(text) => this.onChangePin4(text)}
+                        ref={this.pin4Ref} />
                 </View>
                 <View style={styles.viewReSend}>
                     <Text style={styles.textDidnotReceive}>I didn't recieve a code?</Text>
                     <TouchableOpacity>
-                        <Text style={styles.textResend}>Resend</Text>   
+                        <Text style={styles.textResend}>Resend</Text>
                     </TouchableOpacity>
-                    
+
                 </View>
                 <Button
                     styleViewButton={styles.button}
