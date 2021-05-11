@@ -3,6 +3,7 @@ const Data = [
     id: 1,
     text: "Point Nudooz",
     source: require("../../../assets/Profit.png"),
+    navigate: "PointNudoozScreen"
   },
   {
     id: 2,

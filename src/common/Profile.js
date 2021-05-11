@@ -6,7 +6,12 @@ import { sizeFont, sizeHeight, sizeWidth } from "../utils/Size";
 export default class Profile extends Component {
   render() {
     return (
-      <TouchableOpacity style={styles.profileBar}>
+      <TouchableOpacity
+        style={styles.profileBar}
+        onPress={() => {
+          this.props.navigation.navigate("ProfileScreen");
+        }}
+      >
         <View style={styles.profileContainer}>
           <Image
             style={styles.icon}

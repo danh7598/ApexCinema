@@ -74,6 +74,9 @@ export default class HistoryScreen extends Component {
                 bottom: sizeHeight(7.03),
                 position: "absolute",
               }}
+              onPress={() => {
+                this.props.navigation.navigate("HomeScreen");
+              }}
             />
           </View>
         )}

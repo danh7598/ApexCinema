@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 class SettingBar extends Component {
   render() {
     return (
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity style={styles.container} onPress={this.props.onPress}>
         <View style={styles.leftContent}>
           <Image style={styles.leftIcon} source={this.props.source} />
           <Text style={styles.text}> {this.props.text}</Text>
@@ -59,5 +59,6 @@ const styles = StyleSheet.create({
 SettingBar.propTypes = {
   source: PropTypes.node.isRequired,
   text: PropTypes.string.isRequired,
+  onPress: PropTypes.node,
 };
 export default SettingBar;

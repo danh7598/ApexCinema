@@ -19,7 +19,7 @@ export default class SettingScreen extends Component {
           />
         </View>
         <View style={styles.midContainer}>
-          <Profile />
+          <Profile navigation={this.props.navigation} />
           {Data.map((item, index) => {
             return (
               <SettingBar text={item.text} source={item.source} key={item.id} />
