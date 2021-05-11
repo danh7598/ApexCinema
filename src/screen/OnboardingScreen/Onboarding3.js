@@ -6,34 +6,41 @@ import { primaryColor } from '../../strings/colors';
 import { sizeFont, sizeHeight, sizeWidth } from '../../utils/Size';
 import TextTitle from './TextTitle';
 import arrow_next from '../../../assets/Arrow-Next.png';
-export default class Onboarding3 extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Image
-                    style={styles.imgIllus}
-                    source={IllusOnboarding3} />
-                <View style={styles.viewTextWelcome}>
-                    <Text style={styles.textWelcome}>WELCOME TO</Text>
-                    <Text style={styles.textNuddoz}>NUDDOZ</Text>
-                </View>
-                <TextTitle
-                    styleView={styles.textTitle}
-                    textBold={'Let’s Start With Us'}
-                    textLight={'Nudooz Cinema app is great in design and incredibly simple to use'} />
-                <Button
-                    styleViewButton={styles.button}
-                    textButton={'Get Started'}
-                    imgSource={arrow_next} />
+const Onboarding3 = ({ navigation }) => {
+    const onPressStarted = () => {
+        navigation.navigate('SignInScreen');
+    };
+    return (
+        <View
+            collapsable={false}
+            style={styles.container}>
+            <Image
+                style={styles.imgIllus}
+                source={IllusOnboarding3} />
+            <View style={styles.viewTextWelcome}>
+                <Text style={styles.textWelcome}>WELCOME TO</Text>
+                <Text style={styles.textNuddoz}>NUDDOZ</Text>
             </View>
-        );
-    }
-}
+            <TextTitle
+                styleView={styles.textTitle}
+                textBold={'Let’s Start With Us'}
+                textLight={'Nudooz Cinema app is great in design and incredibly simple to use'} />
+            <Button
+                onPress={onPressStarted}
+                styleViewButton={styles.button}
+                textButton={'Get Started'}
+                imgSource={arrow_next} />
+        </View>
+    );
+};
+
+export default Onboarding3;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        alignItems: 'center',
+        width: sizeWidth(100),
+        height: sizeHeight(100),
+        alignItems: 'center'
     },
     imgIllus: {
         width: sizeWidth(100),
@@ -55,13 +62,13 @@ const styles = StyleSheet.create({
         top: sizeHeight(27.21)
     },
     textWelcome: {
-        fontSize: sizeFont(4.2),
+        fontSize: sizeFont(2.08),
         fontWeight: '700',
         color: '#201F28',
         textAlign: 'center'
     },
     textNuddoz: {
-        fontSize: sizeFont(8.5),
+        fontSize: sizeFont(4.16),
         fontWeight: '700',
         color: primaryColor,
         textAlign: 'center'
@@ -69,6 +76,6 @@ const styles = StyleSheet.create({
     button: {
         position: 'absolute',
         bottom: sizeHeight(6.77)
-    }
+    },
 
 });

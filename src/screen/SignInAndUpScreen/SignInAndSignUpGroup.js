@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     textSignWhenSelected: {
-        fontSize: sizeFont(8.5),
+        fontSize: sizeFont(4.16),
         fontWeight: '700',
         color: primaryColor,
         lineHeight: sizeHeight(4.97)
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     textSignWhenNotSelected: {
         marginLeft: sizeWidth(6.4),
         marginRight: sizeWidth(6.4),
-        fontSize: sizeFont(5.3),
+        fontSize: sizeFont(2.6),
         fontWeight: '500',
         color: neutral2Color,
         lineHeight: sizeHeight(4.97)

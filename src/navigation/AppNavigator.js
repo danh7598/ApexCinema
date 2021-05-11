@@ -12,6 +12,7 @@ import ProfileScreen from "../screen/ProfileScreen";
 import PointNudoozScreen from "../screen/PointNudoozScreen";
 import HomeScreen from "../screen/HomeScreen";
 import NotificationScreen from "../screen/NotificationScreen";
+import OnboardingStack from "./OnboardingStack";
 const Stack = createStackNavigator();
 const myTheme = {
   ...DefaultTheme,
@@ -25,6 +26,8 @@ const AppNavigator = () => {
     <NavigationContainer theme={myTheme}>
       <Stack.Navigator headerMode={"none"} initialRouteName={"NotificationScreen"}>
         <Stack.Screen name="SettingScreen" component={SettingScreen} />
+        <Stack.Screen name="Onboarding" component={OnboardingStack} />
+        <Stack.Screen name="SignInScreen" component={SignInAndUpScreen} />
         <Stack.Screen name="SignInAndUpScreen" component={SignInAndUpScreen} />
         <Stack.Screen name="HistoryScreen" component={HistoryScreen} />
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />

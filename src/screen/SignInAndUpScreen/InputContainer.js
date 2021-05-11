@@ -16,7 +16,14 @@ export default class InputContainer extends Component {
     }
     switchSignView = (isSignIn) => () => {
         this.setState({ isSignIn: isSignIn });
-    }
+    };
+    onPressButton = () => {
+        if (this.state.isSignIn) {
+            this.props.navigation.navigate('HomeScreen');
+        } else {
+            this.props.navigation.navigate('Verification');
+        }
+    };
     render() {
         //Nếu nhấn vào SignIn thì gửi giá trị true, ngược lại là false
         return (
@@ -30,6 +37,7 @@ export default class InputContainer extends Component {
                         : <InputSignUp />}
                 </View>
                 <Button
+                    onPress={this.onPressButton}
                     styleViewButton={styles.button}
                     textButton={this.state.isSignIn ? 'Sign In' : 'Sign Up'} />
             </View>
@@ -53,10 +61,10 @@ const styles = StyleSheet.create({
         //borderWidth: 1,
 
     },
-    
+
     button: {
         position: 'absolute',
         bottom: sizeHeight(7.0)
     },
-    
+
 });
