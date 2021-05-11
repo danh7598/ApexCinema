@@ -4,15 +4,13 @@ import InputContainer from './InputContainer';
 import illusBackground from '../../../assets/IllusSignInAndSignUp.jpg';
 import { sizeWidth, sizeHeight } from '../../utils/Size';
 export default class SignInAndUpScreen extends Component {
-
-
     render() {
         return (
             <View style={styles.container}>
                 <ImageBackground
                     style={styles.imgBackground}
                     source={illusBackground} />
-                <InputContainer />
+                <InputContainer navigation={this.props.navigation} />
             </View>
         );
     }

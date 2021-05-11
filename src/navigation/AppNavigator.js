@@ -27,7 +27,7 @@ const AppNavigator = () => {
       <Stack.Navigator headerMode={"none"} initialRouteName={"Onboarding"}>
         <Stack.Screen name="SettingScreen" component={SettingScreen} />
         <Stack.Screen name="Onboarding" component={OnboardingStack} />
-
+        <Stack.Screen name="SignInScreen" component={SignInAndUpScreen} />
         <Stack.Screen name="SignInAndUpScreen" component={SignInAndUpScreen} />
         <Stack.Screen name="HistoryScreen" component={HistoryScreen} />
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
