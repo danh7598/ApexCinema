@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     textButton: {
-        fontSize: sizeFont(4.2),
+        fontSize: sizeFont(2.09),
         color: neutral1Color,
         fontWeight: '700'
     },
