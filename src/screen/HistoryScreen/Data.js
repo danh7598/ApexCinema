@@ -1,0 +1,48 @@
+const Data = [
+  // {
+  //   id: 1,
+  //   name: "The Secret Life Of Pets 2 (2019)",
+  //   image: require("../../../assets/pet2.png"),
+  //   rate: 4.8,
+  //   rateCount: 894,
+  //   number: 4,
+  //   day: "Mar 2, 2021",
+  // },
+  // {
+  //   id: 2,
+  //   name: "COCO (2020)",
+  //   image: require("../../../assets/coco.png"),
+  //   rate: 5,
+  //   rateCount: 894,
+  //   number: 5,
+  //   day: "Mar 2, 2021",
+  // },
+  // {
+  //   id: 3,
+  //   name: "Royal Corgi (2020)",
+  //   image: require("../../../assets/royalCorgi.png"),
+  //   rate: 3.2,
+  //   rateCount: 894,
+  //   number: 3,
+  //   day: "Mar 2, 2021",
+  // },
+  // {
+  //   id: 4,
+  //   name: "Royal Corgi (2020)",
+  //   image: require("../../../assets/royalCorgi.png"),
+  //   rate: 3.2,
+  //   rateCount: 894,
+  //   number: 3,
+  //   day: "Mar 2, 2021",
+  // },
+  // {
+  //   id: 5,
+  //   name: "Royal Corgi (2020)",
+  //   image: require("../../../assets/royalCorgi.png"),
+  //   rate: 3.2,
+  //   rateCount: 894,
+  //   number: 3,
+  //   day: "Mar 2, 2021",
+  // },
+];
+export default Data;

@@ -1,27 +1,38 @@
 import React, { Component } from "react";
-import { Text, StyleSheet, View, Image, ImageBackground } from "react-native";
+import {
+  Text,
+  StyleSheet,
+  View,
+  Image,
+  ImageBackground,
+  TouchableOpacity,
+} from "react-native";
 import { sizeFont, sizeHeight, sizeWidth } from "../utils/Size";
-
-export default class Ticket extends Component {
+import Rating from "./Rating";
+import PropTypes from "prop-types";
+class Ticket extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <TouchableOpacity style={styles.container}>
         <Image
           style={styles.baseBackground}
           source={require("../../assets/Base.png")}
         />
         <View style={styles.pictureView}>
-          <Image
-            style={styles.picture}
-            source={require("../../assets/pet2.png")}
-          />
+          <Image style={styles.picture} source={this.props.source} />
         </View>
         <View style={styles.textView}>
-          <Text style={styles.title}>The Secret Life Of Pets 2 (2019)</Text>
-          <Text style={{ marginTop: sizeHeight(2) }}> fasfasfsa </Text>
-          <Text style={styles.dayText}>Mar 2, 2021</Text>
+          <Text style={styles.title}>{this.props.title}</Text>
+          <View style={{ marginTop: sizeHeight(1) }}>
+            <Rating
+              rate={this.props.rate}
+              rateCount={this.props.rateCount}
+              number={this.props.number}
+            />
+          </View>
+          <Text style={styles.dayText}>{this.props.day}</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
@@ -32,8 +43,8 @@ const styles = StyleSheet.create({
     // alignItems: "center",
     marginTop: sizeHeight(1),
     width: sizeWidth(88.2),
-
-    marginHorizontal: 24,
+    marginBottom: sizeHeight(1),
+    marginHorizontal: sizeWidth(6.4),
     // justifyContent: "center",
     flexDirection: "row",
     // backgroundColor: "red",
@@ -67,6 +78,7 @@ const styles = StyleSheet.create({
     width: sizeWidth(56.53),
     // backgroundColor: "blue",
     // opacity: 0.5,
+    paddingLeft: sizeHeight(1),
   },
   title: {
     fontSize: sizeFont(5.33),
@@ -74,12 +86,12 @@ const styles = StyleSheet.create({
     lineHeight: sizeHeight(4.5),
     marginRight: sizeHeight(8),
     marginTop: sizeHeight(1),
-    marginLeft: sizeHeight(1),
+    // marginLeft: sizeHeight(1),
     marginBottom: sizeHeight(1),
     color: "white",
   },
   dayText: {
-    // marginTop: sizeHeight(2),
+    marginTop: sizeHeight(2.5),
     fontSize: sizeFont(3.73),
     fontWeight: "400",
     // marginBottom: sizeHeight(2),
@@ -89,3 +101,13 @@ const styles = StyleSheet.create({
     color: "#817F95",
   },
 });
+Ticket.propTypes = {
+  source: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
+  rateCount: PropTypes.number.isRequired,
+  rate: PropTypes.number.isRequired,
+  number: PropTypes.number.isRequired,
+  day: PropTypes.string.isRequired,
+};
+
+export default Ticket;

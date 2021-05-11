@@ -1,11 +1,24 @@
 import React, { Component } from "react";
-import { Text, StyleSheet, View, Image } from "react-native";
+import { Text, StyleSheet, View, Image, FlatList } from "react-native";
 import Button from "../../common/Button";
 import HeaderBar from "../../common/HeaderBar";
 import Ticket from "../../common/Ticket";
 import { sizeFont, sizeHeight, sizeWidth } from "../../utils/Size";
+import Data from "./Data";
 
-export default class index extends Component {
+export default class HistoryScreen extends Component {
+  renderItem = ({ item, index }) => {
+    return (
+      <Ticket
+        title={item.name}
+        rate={item.rate}
+        rateCount={item.rateCount}
+        number={item.number}
+        day={item.day}
+        source={item.image}
+      />
+    );
+  };
   render() {
     return (
       <View style={styles.container}>
@@ -17,28 +30,56 @@ export default class index extends Component {
           />
         </View>
         <View style={styles.midContainer}>
-          {/* <Image
-            style={styles.image}
-            source={require("../../../assets/ticket_2.png")}
-          />
-          <View style={styles.content}>
-            <Text style={styles.text1}>No Transactions</Text>
-            <Text style={styles.text2}>
-              Let's start watching the movie for the first deal
-            </Text>
-          </View> */}
-          <Ticket />
-        </View>
-        <View style={styles.footContainer}>
-          <Button
-            textButton={"Home"}
-            styleViewButton={{
-              marginHorizontal: 24,
-              bottom: sizeHeight(7.03),
-              position: "absolute",
+          {Data.length === 0 && (
+            <View style={styles.noTransactions}>
+              <Image
+                style={styles.image}
+                source={require("../../../assets/ticket_2.png")}
+              />
+              <View style={styles.content}>
+                <Text style={styles.text1}>No Transactions</Text>
+                <Text style={styles.text2}>
+                  Let's start watching the movie for the first deal
+                </Text>
+              </View>
+            </View>
+          )}
+          <FlatList
+            data={Data}
+            keyExtractor={(item, index) => {
+              return "ticket-" + item.id;
             }}
+            renderItem={this.renderItem}
+            // style={{ height: sizeHeight(80) }}
           />
+          {/* {Data.map((item, index) => {
+            return (
+              <Ticket
+                title={item.name}
+                key={item.id}
+                source={item.image}
+                rateNumber={item.rateNumber}
+                rateCount={item.rateCount}
+                number={item.number}
+              />
+            );
+          })} */}
         </View>
+        {Data.length === 0 && (
+          <View style={styles.footContainer}>
+            <Button
+              textButton={"Home"}
+              styleViewButton={{
+                marginHorizontal: 24,
+                bottom: sizeHeight(7.03),
+                position: "absolute",
+              }}
+              onPress={() => {
+                this.props.navigation.navigate("HomeScreen");
+              }}
+            />
+          </View>
+        )}
       </View>
     );
   }
@@ -67,6 +108,7 @@ const styles = StyleSheet.create({
     width: sizeWidth(49.3),
     height: sizeWidth(49.3),
     resizeMode: "contain",
+    // alignSelf: "center",
   },
   content: {
     marginTop: sizeHeight(6),
@@ -85,5 +127,10 @@ const styles = StyleSheet.create({
     marginTop: sizeHeight(2),
     marginHorizontal: sizeWidth(16.26),
     lineHeight: sizeHeight(3.5),
+  },
+  noTransactions: {
+    // backgroundColor: "yellow",
+    alignItems: "center",
+    marginTop: sizeHeight(13.6),
   },
 });
