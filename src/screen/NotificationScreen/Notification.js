@@ -28,7 +28,6 @@ const Notification = ({ title, time, seen, image }) => {
         </View>
       </TouchableOpacity>
     </View>
-
   );
 };
 
