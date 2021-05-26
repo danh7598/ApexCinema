@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 const array = [1, 2, 3, 4, 5];
 class Rating extends Component {
   render() {
-    let number = this.props.number;
+    let number = Math.floor(this.props.rate);
     return (
       <View style={styles.container}>
         {array.map((item, index) => {
@@ -34,7 +34,10 @@ class Rating extends Component {
     );
   }
 }
-
+Rating.propTypes = {
+  rateCount: PropTypes.number.isRequired,
+  rate: PropTypes.number.isRequired,
+};
 const styles = StyleSheet.create({
   container: {
     // height: sizeHeight(2.3),
@@ -49,7 +52,7 @@ const styles = StyleSheet.create({
     // backgroundColor: "yellow",
   },
   rateNumber: {
-    fontSize: sizeFont(3.2),
+    fontSize: sizeFont(1.5625),
     fontWeight: "400",
     color: "white",
     marginLeft: sizeWidth(0.5),
@@ -59,15 +62,11 @@ const styles = StyleSheet.create({
     marginTop: sizeWidth(0.5),
   },
   rateCount: {
-    fontSize: sizeFont(3.2),
+    fontSize: sizeFont(1.5625),
     fontWeight: "600",
     color: primaryColor,
     marginLeft: sizeWidth(1),
   },
 });
-Rating.propTypes = {
-  number: PropTypes.number.isRequired,
-  rateCount: PropTypes.number.isRequired,
-  rate: PropTypes.number.isRequired,
-};
+
 export default Rating;

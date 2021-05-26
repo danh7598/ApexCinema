@@ -4,9 +4,6 @@ import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import SettingScreen from "../screen/SettingScreen";
 import SignInAndUpScreen from "../screen/SignInAndUpScreen";
-import Verification1 from "../screen/VerificationScreen/Verification1";
-import Verification2 from "../screen/VerificationScreen/Verification2";
-import Verification3 from "../screen/VerificationScreen/Verification3";
 import HistoryScreen from "../screen/HistoryScreen";
 import ProfileScreen from "../screen/ProfileScreen";
 import PointNudoozScreen from "../screen/PointNudoozScreen";
@@ -14,6 +11,10 @@ import NotificationScreen from "../screen/NotificationScreen";
 import OnboardingStack from "./OnboardingStack";
 import HomeTopTab from "./HomeTopTab";
 import CreditCardStack from "./CreditCardStack";
+import SearchScreen from "../screen/SearchScreen";
+import MovieBookingScreen from "../screen/MovieBookingScreen";
+import MovieBookingScreen2 from "../screen/MovieBookingScreen/MovieBookingScreen2";
+import HomeDrawer from "./HomeDrawer";
 const Stack = createStackNavigator();
 const myTheme = {
   ...DefaultTheme,
@@ -25,7 +26,7 @@ const myTheme = {
 const AppNavigator = () => {
   return (
     <NavigationContainer theme={myTheme}>
-      <Stack.Navigator headerMode={"none"} initialRouteName={"CreditCardStack"}>
+      <Stack.Navigator headerMode={"none"} initialRouteName={"Home"}>
         <Stack.Screen name="Onboarding" component={OnboardingStack} />
         <Stack.Screen name="SignInScreen" component={SignInAndUpScreen} />
         <Stack.Screen name="SettingScreen" component={SettingScreen} />
@@ -35,7 +36,7 @@ const AppNavigator = () => {
         <Stack.Screen name="PointNudoozScreen" component={PointNudoozScreen} />
         <Stack.Screen
           name="Home"
-          component={HomeTopTab}
+          component={HomeDrawer}
           options={{ headerShown: true }}
         />
         <Stack.Screen
@@ -43,6 +44,15 @@ const AppNavigator = () => {
           component={NotificationScreen}
         />
         <Stack.Screen name="CreditCardStack" component={CreditCardStack} />
+        <Stack.Screen name="SearchScreen" component={SearchScreen} />
+        <Stack.Screen
+          name="MovieBookingScreen"
+          component={MovieBookingScreen}
+        />
+        <Stack.Screen
+          name="MovieBookingScreen2"
+          component={MovieBookingScreen2}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

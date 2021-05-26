@@ -10,10 +10,11 @@ const HeaderBar = ({
   onPressLeft,
   onPressRight1,
   onPressRight2,
+  style,
 }) => {
   //console.log(sizeWidth(6.4))
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <TouchableOpacity style={styles.viewButton} onPress={onPressLeft}>
         <Image style={styles.imgButton} source={leftButton} />
       </TouchableOpacity>

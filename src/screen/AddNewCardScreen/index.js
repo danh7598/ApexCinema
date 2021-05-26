@@ -64,6 +64,7 @@ const AddNewCardScreen = ({ navigation }) => {
         maxLength={5}
         keyboardType={"numeric"}
       />
+
       <Button
         onPress={onPressButton}
         styleViewButton={styles.button}

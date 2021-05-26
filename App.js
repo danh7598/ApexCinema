@@ -18,19 +18,6 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
-      {/* <SignInAndUpScreen /> */}
-      {/* <Verification3 /> */}
-      {/* <HeaderBar
-        leftButton={back}
-        right1Button={zoom}
-        right2Button={bell}
-        title={"Verification"}
-      /> */}
-      {/* <HistoryScreen /> */}
-      {/* <SettingScreen /> */}
-      {/* <ProfileScreen /> */}
-      {/* <PointNudoozScreen /> */}
-      {/* <HistoryScreen /> */}
       <AppNavigator />
     </View>
   );

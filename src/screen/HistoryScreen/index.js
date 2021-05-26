@@ -28,6 +28,9 @@ export default class HistoryScreen extends Component {
             leftButton={require("../../../assets/Menu.png")}
             title={"History"}
             right1Button={require("../../../assets/Bell.png")}
+            onPressLeft={() => {
+              this.props.navigation.openDrawer();
+            }}
           />
         </View>
         <View style={styles.midContainer}>
@@ -76,7 +79,7 @@ export default class HistoryScreen extends Component {
                 position: "absolute",
               }}
               onPress={() => {
-                this.props.navigation.navigate("HomeScreen");
+                this.props.navigation.navigate("HomeTopTab");
               }}
             />
           </View>
