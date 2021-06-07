@@ -15,7 +15,7 @@ import { sizeFont, sizeHeight, sizeWidth } from "../../utils/Size";
 import Rating from "../HistoryScreen/Rating";
 import Cast from "./Cast";
 import CastData from "./CastData";
-const MovieBookingScreen = () => {
+const MovieBookingScreen = ({ navigation }) => {
   const renderItem = ({ item, index }) => {
     return <Cast name={item.name} image={item.image} />;
   };
@@ -25,6 +25,9 @@ const MovieBookingScreen = () => {
         leftButton={require("../../../assets/Back.png")}
         title={"Movie Booking"}
         right2Button={require("../../../assets/Network-connection.png")}
+        onPressLeft={() => {
+          navigation.goBack();
+        }}
       />
 
       <ScrollView
@@ -58,7 +61,7 @@ const MovieBookingScreen = () => {
             }}
           >
             <Text style={styles.name}>COCO</Text>
-            <Text style={styles.time}>Thu, 05.22.2020</Text>
+            {/* <Text style={styles.time}>Thu, 05.22.2020</Text>
             <Text
               style={[
                 styles.time,
@@ -66,8 +69,10 @@ const MovieBookingScreen = () => {
               ]}
             >
               23:00 - 01:07
-            </Text>
-            <Rating rate={4.8} rateCount={1293} />
+            </Text> */}
+            <View style={{ marginTop: sizeHeight(2) }}>
+              <Rating rate={4.8} rateCount={1293} />
+            </View>
           </View>
         </View>
         {/* Image */}
@@ -94,7 +99,10 @@ const MovieBookingScreen = () => {
         </View>
         <View style={styles.infoContainer}>
           <Text style={styles.name}>Trailer</Text>
-          <Image style={styles.video} />
+          <Image
+            style={styles.video}
+            source={require("../../../assets/trailer.png")}
+          />
         </View>
         <View style={styles.infoContainer}>
           <Text style={styles.name}>Cast</Text>
@@ -110,7 +118,13 @@ const MovieBookingScreen = () => {
         </View>
         <View style={styles.buttonView}></View>
       </ScrollView>
-      <Button styleViewButton={styles.button} textButton={"Book Now"} />
+      <Button
+        styleViewButton={styles.button}
+        textButton={"Book Now"}
+        onPress={() => {
+          navigation.navigate("MovieBookingScreen2");
+        }}
+      />
     </View>
   );
 };
@@ -166,6 +180,7 @@ const styles = StyleSheet.create({
     backgroundColor: "skyblue",
     borderRadius: sizeWidth(3.2),
     marginTop: sizeHeight(2),
+    resizeMode: "cover",
   },
   button: {
     position: "absolute",

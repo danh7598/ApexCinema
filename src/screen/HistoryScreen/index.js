@@ -119,12 +119,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text1: {
-    fontSize: sizeFont(5.33),
+    fontSize: sizeFont(2.6),
     fontWeight: "700",
     color: "white",
   },
   text2: {
-    fontSize: sizeFont(4.26),
+    fontSize: sizeFont(2.08),
     fontWeight: "400",
     color: "#817F95",
     textAlign: "center",

@@ -17,7 +17,11 @@ import AppNavigator from "./src/navigation/AppNavigator";
 export default function App() {
   return (
     <View style={styles.container}>
-      <StatusBar style="light" />
+      <StatusBar
+        style="light"
+        translucent={true}
+        // backgroundColor={"transparent"}
+      />
       <AppNavigator />
     </View>
   );

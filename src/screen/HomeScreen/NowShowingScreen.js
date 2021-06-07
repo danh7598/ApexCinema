@@ -1,21 +1,30 @@
 import React from "react";
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { sizeFont, sizeHeight, sizeWidth } from "../../utils/Size";
 import cocoImage from "../../../assets/CocoImage.png";
 import { neutral3Color, neutral4Color } from "../../strings/colors";
 import Button from "../../common/Button";
 import MovieData from "./MovieData";
-const NowShowingScreen = () => {
+const NowShowingScreen = ({ navigation }) => {
   const renderItem = ({ item, index }) => {
     return (
-      <View style={styles.viewGroupCenter}>
+      <TouchableOpacity style={styles.viewGroupCenter} onPress={() => {navigation.navigate(item.navigate)}}>
         <View style={styles.imgBack}></View>
+
         <Image source={item.image} style={styles.imgAhead} />
+
         <View style={styles.viewText}>
           <Text style={styles.textMovie}>{item.name}</Text>
           <Text style={styles.textDate}>{item.date}</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
   return (
@@ -27,8 +36,15 @@ const NowShowingScreen = () => {
         keyExtractor={(item) => {
           return item.id;
         }}
+        showsHorizontalScrollIndicator={false}
       />
-      <Button textButton={"Book Ticket"} styleViewButton={styles.button} />
+      <Button
+        textButton={"Book Ticket"}
+        styleViewButton={styles.button}
+        onPress={() => {
+          navigation.navigate("MovieBookingScreen");
+        }}
+      />
     </View>
   );
 };
@@ -58,6 +74,7 @@ const styles = StyleSheet.create({
     width: sizeWidth(81.86),
     height: sizeHeight(55.72),
     borderRadius: sizeWidth(4.2),
+    // backgroundColor: "yellow",
     // resizeMode: "contain",
   },
   imgBack: {

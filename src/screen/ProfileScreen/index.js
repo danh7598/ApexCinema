@@ -78,19 +78,19 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   profileName: {
-    fontSize: sizeFont(5.3),
+    fontSize: sizeFont(2.6),
     fontWeight: "700",
     marginTop: sizeHeight(2),
     color: "white",
   },
   profileEmail: {
-    fontSize: sizeFont(3.7),
+    fontSize: sizeFont(1.82),
     fontWeight: "400",
     marginTop: sizeHeight(1),
     color: neutral3Color,
   },
   editText: {
-    fontSize: sizeFont(3.7),
+    fontSize: sizeFont(1.82),
     fontWeight: "500",
     marginTop: sizeHeight(2),
     color: primaryColor,

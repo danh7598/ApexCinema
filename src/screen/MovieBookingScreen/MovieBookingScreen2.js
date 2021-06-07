@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FlatList,
   Image,
@@ -17,15 +17,24 @@ import ChooseTimeData from "./ChooseTimeData";
 import DateComponent from "./DateComponent";
 import LocationComponent from "./LocationComponent";
 import LocationData from "./LocationData";
-const MovieBookingScreen2 = () => {
-  const [choose, setChoose] = React.useState(0);
-  const [chooseLocation, setChooseLocation] = React.useState(0);
+const MovieBookingScreen2 = ({ navigation }) => {
+  const [chooseTime, setChooseTime] = React.useState(-1);
+  const [chooseLocation, setChooseLocation] = React.useState(-1);
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [place, setPlace] = useState("");
+  // console.log(date);
+  // console.log(place);
+  // console.log(time);
   return (
     <View style={styles.container}>
       <HeaderBar
         leftButton={require("../../../assets/Back.png")}
         title={"Movie Booking"}
         right2Button={require("../../../assets/Network-connection.png")}
+        onPressLeft={() => {
+          navigation.goBack();
+        }}
       />
       <ScrollView
         showsVerticalScrollIndicator={false}
@@ -59,7 +68,7 @@ const MovieBookingScreen2 = () => {
             }}
           >
             <Text style={styles.name}>COCO</Text>
-            <Text style={styles.time}>Thu, 05.22.2020</Text>
+            {/* <Text style={styles.time}>Thu, 05.22.2020</Text>
             <Text
               style={[
                 styles.time,
@@ -67,8 +76,10 @@ const MovieBookingScreen2 = () => {
               ]}
             >
               23:00 - 01:07
-            </Text>
-            <Rating rate={4.8} rateCount={1293} />
+            </Text> */}
+            <View style={{ marginTop: sizeHeight(2) }}>
+              <Rating rate={4.8} rateCount={1293} />
+            </View>
           </View>
         </View>
         {/* Image */}
@@ -82,9 +93,10 @@ const MovieBookingScreen2 = () => {
                   date={item.date}
                   day={item.day}
                   key={item.id}
-                  choosed={choose === index}
+                  choosed={chooseTime === index}
                   onPress={() => {
-                    setChoose(index);
+                    setChooseTime(index);
+                    setDate(item.months + " " + item.date + ", " + item.year);
                   }}
                 />
               );
@@ -96,31 +108,44 @@ const MovieBookingScreen2 = () => {
         <View style={styles.chooseLocationContainer}>
           <Text style={styles.name}>Choose Location</Text>
           <View style={{ marginTop: -sizeHeight(1) }}>
-            <FlatList
-              data={LocationData}
-              renderItem={({ item, index }) => {
-                return (
-                  <LocationComponent
-                    name={item.name}
-                    address={item.address}
-                    keyExtractor={(item) => {
-                      return item.id;
-                    }}
-                    index={index}
-                    location={chooseLocation === index}
-                    onPress={() => {
-                      setChooseLocation(index);
-                    }}
-                  />
-                );
-              }}
-            />
+            {LocationData.map((item, index) => {
+              return (
+                <LocationComponent
+                  name={item.name}
+                  address={item.address}
+                  keyExtractor={(item) => {
+                    return item.id;
+                  }}
+                  index={index}
+                  location={chooseLocation === index}
+                  onPress={() => {
+                    setChooseLocation(index);
+                    setPlace(item.name);
+                  }}
+                  key={item.id}
+                  onPressTime={(timeParam) => {
+                    setTime(timeParam);
+                  }}
+                />
+              );
+            })}
           </View>
         </View>
         <View style={styles.buttonView}></View>
         {/* Choose location */}
       </ScrollView>
-      <Button styleViewButton={styles.button} textButton={"Book Now"} />
+      <Button
+        styleViewButton={styles.button}
+        textButton={"Book Now"}
+        onPress={() => {
+          if (date != "" && time != "") {
+            navigation.navigate("MovieBookingScreen3", {
+              date: date,
+              time: time,
+            });
+          }
+        }}
+      />
     </View>
   );
 };

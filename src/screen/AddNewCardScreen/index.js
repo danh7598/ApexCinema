@@ -8,7 +8,7 @@ import Card from "./Card";
 import Button from "../../common/Button";
 const AddNewCardScreen = ({ navigation }) => {
   const onPressButton = () => {
-    navigation.navigate("Payment");
+    navigation.navigate("CreditCardScreen");
   };
   const [Name, setName] = React.useState("");
   const [Number, setNumber] = React.useState("");

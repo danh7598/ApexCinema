@@ -69,13 +69,13 @@ const styles = StyleSheet.create({
     marginLeft: sizeWidth(1),
   },
   title: {
-    fontSize: sizeFont(5.3),
+    fontSize: sizeFont(2.6),
     fontWeight: "700",
     color: "white",
     marginTop: sizeWidth(1.5),
   },
   subtitle: {
-    fontSize: sizeFont(3.7),
+    fontSize: sizeFont(1.82),
     fontWeight: "500",
     color: primaryColor,
     marginTop: sizeHeight(1),

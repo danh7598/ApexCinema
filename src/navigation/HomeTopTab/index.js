@@ -23,6 +23,12 @@ const HomeTopTab = ({ navigation }) => {
         onPressLeft={() => {
           navigation.openDrawer();
         }}
+        onPressRight1={() => {
+          navigation.navigate("SearchScreen");
+        }}
+        onPressRight2={() => {
+          navigation.navigate("CreditCardStack");
+        }}
       />
       <Tab.Navigator
         tabBar={(props) => <HomeTabbar {...props} />}

@@ -1,8 +1,8 @@
 const LocationData = [
   {
     id: "1",
-    name: "Nudooz Cinema New Jersey",
-    address: "21 W.46th St, New York, United States",
+    name: "CGV Đà Nẵng",
+    address: "Đà Nẵng",
     item: [
       {
         id: "1",
@@ -28,8 +28,8 @@ const LocationData = [
   },
   {
     id: "2",
-    name: "Nudooz Cinema New Jersey",
-    address: "21 W.46th St, New York, United States",
+    name: "CGV Vĩnh Trung",
+    address: "Việt Nam",
     item: [
       {
         id: "1",
@@ -55,8 +55,8 @@ const LocationData = [
   },
   {
     id: "3",
-    name: "Nudooz Cinema New Jersey",
-    address: "21 W.46th St, New York, United States",
+    name: "Vincom Đà Nẵng",
+    address: "Hồ Chí Minh",
     item: [
       {
         id: "1",
@@ -82,8 +82,8 @@ const LocationData = [
   },
   {
     id: "4",
-    name: "Nudooz Cinema New Jersey",
-    address: "21 W.46th St, New York, United States",
+    name: "Galaxy Cinema",
+    address: "Hoàng Diệu",
     item: [
       {
         id: "1",

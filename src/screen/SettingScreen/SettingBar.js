@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    fontSize: sizeFont(4.2),
+    fontSize: sizeFont(2.08),
     fontWeight: "500",
     color: "white",
   },
@@ -59,6 +59,6 @@ const styles = StyleSheet.create({
 SettingBar.propTypes = {
   source: PropTypes.node.isRequired,
   text: PropTypes.string.isRequired,
-  onPress: PropTypes.node,
+  onPress: PropTypes.func,
 };
 export default SettingBar;

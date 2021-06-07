@@ -6,6 +6,9 @@ import SettingScreen from "../../screen/SettingScreen";
 import HomeTopTab from "../HomeTopTab";
 import CustomDrawerContent from "./CustomDrawerContent";
 import { primaryColor } from "../../strings/colors";
+import VoucherScreen from "../../screen/VoucherScreen";
+import LocationScreen from "../../screen/LocationScreen";
+import SettingStack from "../SettingStack";
 const Drawer = createDrawerNavigator();
 
 const HomeDrawer = () => {
@@ -19,7 +22,9 @@ const HomeDrawer = () => {
     >
       <Drawer.Screen name="HomeTopTab" component={HomeTopTab} />
       <Drawer.Screen name="HistoryScreen" component={HistoryScreen} />
-      <Drawer.Screen name="SettingScreen" component={SettingScreen} />
+      <Drawer.Screen name="SettingScreen" component={SettingStack} />
+      <Drawer.Screen name="VoucherScreen" component={VoucherScreen} />
+      <Drawer.Screen name="LocationScreen" component={LocationScreen} />
     </Drawer.Navigator>
   );
 };

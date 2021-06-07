@@ -75,19 +75,19 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   title: {
-    fontSize: sizeFont(5.3),
+    fontSize: sizeFont(2.6),
     fontWeight: "700",
     marginTop: sizeHeight(3.64),
     color: "white",
   },
   subtitle: {
-    fontSize: sizeFont(3.7),
+    fontSize: sizeFont(1.82),
     fontWeight: "500",
     marginTop: sizeHeight(1.5625),
     color: primaryColor,
   },
   subtitle2: {
-    fontSize: sizeFont(4.26),
+    fontSize: sizeFont(2.08),
     fontWeight: "400",
     marginTop: sizeHeight(1.95),
     color: neutral3Color,

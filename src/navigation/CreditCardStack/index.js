@@ -10,14 +10,14 @@ const CreditCardStack = () => {
   return (
     <Stack.Navigator
       headerMode={"none"}
-      initialRouteName={"PaymentMethodScreen"}
+      // initialRouteName={"PaymentMethodScreen"}
     >
-      <Stack.Screen name="AddNewCardScreen" component={AddNewCardScreen} />
-      <Stack.Screen name="CreditCardScreen" component={CreditCardScreen} />
       <Stack.Screen
         name="PaymentMethodScreen"
         component={PaymentMethodScreen}
       />
+      <Stack.Screen name="AddNewCardScreen" component={AddNewCardScreen} />
+      <Stack.Screen name="CreditCardScreen" component={CreditCardScreen} />
     </Stack.Navigator>
   );
 };

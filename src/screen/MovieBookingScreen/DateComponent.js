@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { neutral3Color, primaryColor } from "../../strings/colors";
 import { sizeFont, sizeHeight, sizeWidth } from "../../utils/Size";
 
-const DateComponent = ({ date, day, onPress, choosed }) => {
+const DateComponent = ({ date, day, onPress, choosed, month, year }) => {
   return (
     <TouchableOpacity
       style={choosed ? styles.containerHighlight : styles.container}
@@ -16,6 +16,8 @@ const DateComponent = ({ date, day, onPress, choosed }) => {
       <Text style={[styles.day, { color: choosed ? "white" : neutral3Color }]}>
         {day}
       </Text>
+      {/* <Text>{month}</Text>
+      <Text>{year}</Text> */}
     </TouchableOpacity>
   );
 };

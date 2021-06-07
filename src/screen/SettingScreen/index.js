@@ -16,6 +16,12 @@ export default class SettingScreen extends Component {
             leftButton={require("../../../assets/Menu.png")}
             right2Button={require("../../../assets/Bell.png")}
             title={"Setting"}
+            onPressLeft={() => {
+              this.props.navigation.openDrawer();
+            }}
+            onPressRight2={() => {
+              this.props.navigation.navigate("NotificationScreen");
+            }}
           />
         </View>
         <View style={styles.midContainer}>

@@ -12,6 +12,9 @@ const PaymentMethodScreen = ({ navigation }) => {
       <HeaderBar
         leftButton={require("../../../assets/Back.png")}
         title={"Select A Payment Method"}
+        onPressLeft={() => {
+          navigation.goBack();
+        }}
       />
       <TouchableOpacity>
         <View style={styles.methodContainer}>

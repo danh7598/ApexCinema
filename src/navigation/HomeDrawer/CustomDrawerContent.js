@@ -8,97 +8,29 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import { primaryColor } from "../../strings/colors";
 import { sizeFont, sizeHeight, sizeWidth } from "../../utils/Size";
 import AvatarInfoDrawer from "./AvatarInfoDrawer";
-
+import DrawerItemComponent from "./DrawerItemComponent";
+import DrawerData from './DrawerData'
 const CustomDrawerContent = (props) => {
+  const [drawer,setDrawer] = React.useState(0)
   return (
     <DrawerContentScrollView style={{ backgroundColor: "#201F28" }} {...props}>
       <AvatarInfoDrawer />
-      {/* <DrawerItemList {...props} /> */}
-      <DrawerItem
-        label={() => <Text style={styles.text}>Home</Text>}
-        style={[styles.view, { marginTop: sizeHeight(6) }]}
-        onPress={() => {
-          props.navigation.navigate("HomeTopTab");
-        }}
-        icon={(focused, color, size) => {
-          return (
-            <Image
-              style={styles.icon}
-              source={require("../../../assets/Home.png")}
-            />
-          );
-        }}
-        activeTintColor={primaryColor}
-        inactiveTintColor={"white"}
-      />
-      <DrawerItem
-        label={() => <Text style={styles.text}>Voucher</Text>}
-        style={styles.view}
-        onPress={() => {
-          props.navigation.navigate("HomeTopTab");
-        }}
-        icon={(focused, color, size) => {
-          return (
-            <Image
-              style={styles.icon}
-              source={require("../../../assets/Voucher.png")}
-            />
-          );
-        }}
-        activeTintColor={primaryColor}
-        inactiveTintColor={"white"}
-      />
-      <DrawerItem
-        label={() => <Text style={styles.text}>Location</Text>}
-        style={styles.view}
-        onPress={() => {
-          props.navigation.navigate("HomeTopTab");
-        }}
-        icon={(focused, color, size) => {
-          return (
-            <Image
-              style={styles.icon}
-              source={require("../../../assets/Map.png")}
-            />
-          );
-        }}
-        activeTintColor={primaryColor}
-        inactiveTintColor={"white"}
-      />
-      <DrawerItem
-        label={() => <Text style={styles.text}>History</Text>}
-        style={styles.view}
-        onPress={() => {
-          props.navigation.navigate("HistoryScreen");
-        }}
-        icon={(focused, color, size) => {
-          return (
-            <Image
-              style={styles.icon}
-              source={require("../../../assets/History.png")}
-            />
-          );
-        }}
-        activeTintColor={primaryColor}
-        inactiveTintColor={"white"}
-      />
-      <DrawerItem
-        label={() => <Text style={styles.text}>Setting</Text>}
-        style={styles.view}
-        onPress={() => {
-          props.navigation.navigate("HomeTopTab");
-        }}
-        icon={(focused, color, size) => {
-          return (
-            <Image
-              style={styles.icon}
-              source={require("../../../assets/Gear.png")}
-            />
-          );
-        }}
-        activeTintColor={primaryColor}
-        inactiveTintColor={"white"}
-      />
+      <View style={{marginTop: sizeHeight(6)}}>
+      {DrawerData.map((item, index) => {
+        return (
+          <DrawerItemComponent
+            text={item.text}
+            image={item.image}
+            key={item.id}
+            onPress={() => {
+              setDrawer(index)
+            props.navigation.navigate(item.navigate)
+          }}
+          index={drawer === index}
+          />
+        )
+      })}
+        </View>
     </DrawerContentScrollView>
   );
 };

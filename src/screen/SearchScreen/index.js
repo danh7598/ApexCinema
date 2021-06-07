@@ -10,7 +10,7 @@ import { neutral2Color, primaryColor } from "../../strings/colors";
 import { sizeFont, sizeHeight, sizeWidth } from "../../utils/Size";
 import RecentMovie from "./RecentMovie";
 import Data from "./Data";
-const SearchScreen = () => {
+const SearchScreen = ({ navigation }) => {
   const [focusSearch, setFocusSearch] = React.useState(false);
   const searchButton = () => {
     setFocusSearch(true);
@@ -30,6 +30,9 @@ const SearchScreen = () => {
       <HeaderBar
         leftButton={require("../../../assets/Back.png")}
         title={"Search"}
+        onPressLeft={() => {
+          navigation.goBack();
+        }}
       />
       <View style={styles.searchBar}>
         <TextInput

@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     paddingLeft: sizeHeight(1),
   },
   title: {
-    fontSize: sizeFont(5.33),
+    fontSize: sizeFont(2.6),
     fontWeight: "700",
     lineHeight: sizeHeight(4.5),
     marginRight: sizeHeight(8),
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   },
   dayText: {
     marginTop: sizeHeight(2.5),
-    fontSize: sizeFont(3.73),
+    fontSize: sizeFont(1.82),
     fontWeight: "400",
     // marginBottom: sizeHeight(2),
     textAlign: "right",

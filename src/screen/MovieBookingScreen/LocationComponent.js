@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FlatList,
   StyleSheet,
@@ -16,8 +16,10 @@ const LocationComponent = ({
   onPress,
   time,
   index,
+  onPressTime,
 }) => {
-  const [chooseTime, setChooseTime] = React.useState(0);
+  const [chooseTime, setChooseTime] = React.useState(-1);
+  const [timeParam, setTimeParam] = useState("");
   const renderItem = ({ item, index }) => {
     return (
       <TouchableOpacity
@@ -26,13 +28,16 @@ const LocationComponent = ({
           { borderColor: chooseTime === index ? primaryColor : "#817F95" },
         ]}
         onPress={() => {
+          onPressTime(timeParam);
           setChooseTime(index);
+          setTimeParam(item.time);
         }}
       >
         <Text style={styles.time}>{item.time}</Text>
       </TouchableOpacity>
     );
   };
+  // console.log(timeParam);
   //   console.log(LocationData[0].item);
   return (
     <TouchableOpacity
@@ -47,17 +52,19 @@ const LocationComponent = ({
     >
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.address}>{address}</Text>
-      {location && <FlatList
-        data={LocationData[index].item}
-        renderItem={renderItem}
-        keyExtractor={(item) => {
-          return item.id;
-        }}
-        index={index}
-        horizontal={true}
-        time={time}
-        showsHorizontalScrollIndicator={false}
-      />}
+      {location && (
+        <FlatList
+          data={LocationData[index].item}
+          renderItem={renderItem}
+          keyExtractor={(item) => {
+            return item.id;
+          }}
+          index={index}
+          horizontal={true}
+          // time={time}
+          showsHorizontalScrollIndicator={false}
+        />
+      )}
     </TouchableOpacity>
   );
 };
