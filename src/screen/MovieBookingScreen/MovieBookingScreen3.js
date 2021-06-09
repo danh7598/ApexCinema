@@ -142,8 +142,8 @@ const MovieBookingScreen3 = ({ navigation, route }) => {
                           });
                           // delete seatParam[i];
                         }
-                        console.log(seatParam);
-                        console.log(seat);
+                        // console.log(seatParam);
+                        // console.log(seat);
                       }}
                     >
                       {ite === 0 && <View style={styles.chair}></View>}
